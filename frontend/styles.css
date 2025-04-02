@@ -1,0 +1,589 @@
+:root {
+    /* Default theme (matching login page gradient) */
+    --primary-color: #67a8f3;
+    --background-color: #f8f7ff;
+    --card-background: #ffffff;
+    --text-color: #1e293b;
+    --gradient-start: #ba88f0;
+    --gradient-end: #93c5fd;
+}
+
+/* Theme variations based on Plutchik's Emotion Wheel - with lighter gradients */
+body.theme-joy {
+    --primary-color: #fff4bd;
+    --background-color: #fffdf7;
+    --card-background: #ffffff;
+    --text-color: #2c3e50;
+    --gradient-start: #fff4bd;
+    --gradient-end: #ffeb80;
+}
+
+body.theme-sadness {
+    --primary-color: #b4c7ff;
+    --background-color: #f8faff;
+    --card-background: #ffffff;
+    --text-color: #2c3e50;
+    --gradient-start: #b4c7ff;
+    --gradient-end: #93b4ff;
+}
+
+body.theme-anger {
+    --primary-color: #ffb4b4;
+    --background-color: #fff8f8;
+    --card-background: #ffffff;
+    --text-color: #2c3e50;
+    --gradient-start: #ffb4b4;
+    --gradient-end: #ff9999;
+}
+
+body.theme-fear {
+    --primary-color: #b8ffc9;
+    --background-color: #f8fff9;
+    --card-background: #ffffff;
+    --text-color: #2c3e50;
+    --gradient-start: #b8ffc9;
+    --gradient-end: #98ffb3;
+}
+
+body.theme-anticipation {
+    --primary-color: #ffd4a0;
+    --background-color: #fffaf5;
+    --card-background: #ffffff;
+    --text-color: #2c3e50;
+    --gradient-start: #ffd4a0;
+    --gradient-end: #ffbf80;
+}
+
+body.theme-tired {
+    --primary-color: #e5c0ff;
+    --background-color: #fdf8ff;
+    --card-background: #ffffff;
+    --text-color: #2c3e50;
+    --gradient-start: #e5c0ff;
+    --gradient-end: #d9a3ff;
+}
+
+body.theme-neutral {
+    --primary-color: #e2e8f0;
+    --background-color: #f8fafc;
+    --card-background: #ffffff;
+    --text-color: #2c3e50;
+    --gradient-start: #e2e8f0;
+    --gradient-end: #cbd5e1;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+    min-block-size: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    margin-block-end: 2rem;
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar .container-fluid {
+    padding-inline-start: 0;
+    margin-inline-start: 0;
+}
+
+.navbar-brand {
+    color: var(--text-color);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-inline-start: 15px;
+    padding: 0;
+}
+
+.navbar-logo {
+    block-size: 45px;
+    inline-size: auto;
+}
+
+.card {
+    background: #ffffff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mood-btn {
+    background: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    inline-size: 60px;
+    block-size: 60px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.mood-btn:hover {
+    transform: scale(1.1);
+}
+
+.mood-btn.selected {
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mood-insights {
+    padding: 1rem;
+}
+
+.recommendations-container {
+    padding: 1rem;
+}
+
+.recommendation-item {
+    padding: 1rem;
+    margin-block-end: 1rem;
+    border-radius: 10px;
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+}
+
+#moodChart {
+    inline-size: 100%;
+    block-size: 300px;
+}
+
+/* Login page styles */
+.login-page {
+    margin: 0;
+    padding: 0;
+    min-block-size: 100vh;
+    background: #fff;
+    min-block-size: initial;
+    display: block;
+}
+
+.split-container {
+    display: flex;
+    min-block-size: 100vh;
+}
+
+.welcome-side {
+    flex: 1;
+    background: linear-gradient(135deg, #e9d5ff 0%, #93c5fd 100%);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.welcome-text {
+    margin-block-start: 12rem;
+    color: #1e293b;
+    padding-inline-start: 2rem;
+    text-align: start;
+}
+
+.welcome-text h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-block-end: 2rem;
+}
+
+.welcome-text h2 {
+    font-size: 2rem;
+    margin-block-end: 1rem;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 0.2px;
+}
+
+.welcome-logo {
+    position: absolute;
+    inset-block-start: 2rem;
+    inset-inline-start: 2rem;
+    block-size: 45px;
+    inline-size: auto;
+}
+
+.login-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.login-form-container {
+    inline-size: 100%;
+    max-inline-size: 400px;
+    padding: 2rem;
+}
+
+.login-title {
+    color: #1e293b;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-block-end: 2rem;
+}
+
+.custom-input {
+    border: none;
+    border-block-end: 1px solid #e2e8f0;
+    border-radius: 0;
+    padding: 0.2rem 0;
+    margin-block-end: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    box-shadow: none;
+    border-color: #93c5fd;
+}
+
+.gradient-button {
+    background: linear-gradient(135deg, #e9d5ff 0%, #93c5fd 100%);
+    border: none;
+    padding: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.gradient-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.forgot-password {
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
+    text-align: end;
+    margin-block-start: 0.5rem;
+}
+
+.need-account {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.sign-up-link {
+    color: #93c5fd;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-check-label {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.form-check-input:checked {
+    background-color: #93c5fd;
+    border-color: #93c5fd;
+}
+
+.login-page .navbar {
+    background: transparent;
+    position: absolute;
+    inline-size: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: none;
+}
+
+.login-page .navbar-brand {
+    margin-inline-start: 15px;
+}
+
+.login-page .navbar-logo {
+    block-size: 45px;
+    inline-size: auto;
+}
+
+.navbar-nav {
+    margin-inline-end: 2rem;
+}
+
+/* Center nav links spacing */
+.navbar-nav.mx-auto {
+    gap: 1.5rem;  /* Adjusted gap for more links */
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem !important;  /* Adjusted padding for more links */
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Underline effect for center links */
+.navbar-nav.mx-auto .nav-link::after {
+    content: '';
+    position: absolute;
+    inline-size: 0;
+    block-size: 2px;
+    background: #fff;
+    inset-inline-start: 50%;
+    inset-block-end: 0;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav.mx-auto .nav-link:hover::after {
+    inline-size: 80%;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+.sign-in-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem !important;
+    margin-inline-start: 0.5rem;
+}
+
+.sign-in-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    margin-inline-end: 1rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Landing page styles */
+.display-4 {
+    font-weight: 600;
+    color: #333;
+}
+
+.lead {
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    margin-block-start: 2rem;
+}
+
+.gradient-button {
+    background: linear-gradient(45deg, #6c5ce7, #a367dc);
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    transition: transform 0.2s;
+}
+
+.gradient-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(45deg, #5d4ed6, #945dcb);
+}
+
+.feature-highlights {
+    padding: 2rem;
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-block-end: 0.75rem;
+    color: #333;
+}
+
+.feature-card p {
+    color: #666;
+    margin-block-end: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .feature-highlights {
+        padding: 1rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+}
+
+/* Page content styles */
+.page-content {
+    flex: 1;
+    padding-block-end: 3rem; /* Consistent spacing before footer */
+    min-block-size: calc(100vh - 200px); /* Minimum height accounting for navbar and footer */
+}
+
+/* Content spacing for all main pages */
+.home-page,
+.about-page,
+.contact-page,
+.track-page {
+    min-block-size: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Remove specific track-page styles since they're now covered by the general styles */
+.track-content {
+    flex: 1;
+    padding-block-end: 3rem;
+}
+
+/* Footer styles */
+.footer {
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    padding: 1rem 0 0.5rem;
+    margin-block-start: auto;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    inline-size: 100%;
+}
+
+.footer h5 {
+    color: #fff;
+    font-weight: 600;
+    margin-block-end: 0.75rem;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+}
+
+/* Center align Quick Links section */
+.footer .col-md-4:nth-child(2) {
+    text-align: center;
+}
+
+.footer .col-md-4:nth-child(2) ul {
+    display: inline-block;
+    text-align: start;
+}
+
+.footer ul li {
+    margin-block-end: 0.5rem;
+}
+
+.footer ul li a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer ul li a::after {
+    content: '';
+    position: absolute;
+    inline-size: 0;
+    block-size: 2px;
+    background: #fff;
+    inset-inline-start: 50%;
+    inset-block-end: -4px;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.footer ul li a:hover::after {
+    inline-size: 80%;
+}
+
+.footer ul li a:hover {
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.footer hr {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: 1rem 0;
+}
+
+.footer .copyright {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+}
+
+/* Welcome logo styles */
+.welcome-logo {
+    inline-size: 150px;
+    block-size: auto;
+    margin-block-end: 2rem;
+}
+
+.welcome-text {
+    text-align: start;
+    padding: 2rem;
+}
+
+.welcome-text h1 {
+    font-size: 3rem;
+    margin-block-end: 1.5rem;
+    color: #fff;
+}
+
+.welcome-text h2 {
+    font-size: 2rem;
+    margin-block-end: 0.5rem;
+    color: #fff;
+    opacity: 0.9;
+}
+
+/* Ensure footer stays consistent across theme changes */
+body[class*="theme-"] .footer {
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    padding: 1rem 0 0.5rem;
+    margin-block-start: auto;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    inline-size: 100%;
+}
+
+/* Ensure content area grows properly */
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+} 
